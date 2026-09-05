@@ -175,11 +175,11 @@ func (r Report) Fails(level string) bool {
 // WriteText renders human-friendly, secret-safe output.
 func WriteText(w io.Writer, report Report) error {
 	if len(report.Findings) == 0 {
-		_, err := fmt.Fprintf(w, "envdrift: no drift found (%s 鈫?%s)\n", report.Baseline, strings.Join(report.Files, ", "))
+		_, err := fmt.Fprintf(w, "envdrift: no drift found (%s → %s)\n", report.Baseline, strings.Join(report.Files, ", "))
 		return err
 	}
 	for _, finding := range report.Findings {
-		if _, err := fmt.Fprintf(w, "%s: %s %s in %s 鈥?%s\n", strings.ToUpper(finding.Level), finding.Kind, finding.Key, finding.File, finding.Detail); err != nil {
+		if _, err := fmt.Fprintf(w, "%s: %s %s in %s — %s\n", strings.ToUpper(finding.Level), finding.Kind, finding.Key, finding.File, finding.Detail); err != nil {
 			return err
 		}
 	}
