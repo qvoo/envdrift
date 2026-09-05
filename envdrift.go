@@ -117,7 +117,10 @@ func Compare(baseline File, targets []File, options Options) Report {
 	for _, key := range options.IgnoreKeys {
 		ignored[key] = true
 	}
-	report := Report{Baseline: baseline.Path}
+	report := Report{
+		Baseline: baseline.Path,
+		Findings: make([]Finding, 0),
+	}
 	for _, target := range targets {
 		report.Files = append(report.Files, target.Path)
 		for key, expected := range baseline.Entries {
