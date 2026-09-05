@@ -13,7 +13,7 @@ import (
 	"github.com/qvoo/Hello-World"
 )
 
-const usage = `envdrift 鈥?find configuration drift before it reaches production
+const usage = `envdrift — find configuration drift before it reaches production
 
 Usage:
   envdrift [flags] [baseline.env target.env ...]
