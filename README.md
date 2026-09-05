@@ -15,13 +15,13 @@ Most teams have more than one dotenv file: `.env.example`, `.env.local`, CI vari
 ## Install
 
 ```sh
-go install github.com/qvoo/Hello-World/cmd/envdrift@latest
+go install github.com/qvoo/envdrift/cmd/envdrift@latest
 ```
 
 Or run it without installing:
 
 ```sh
-go run github.com/qvoo/Hello-World/cmd/envdrift@latest .env.example .env.local
+go run github.com/qvoo/envdrift/cmd/envdrift@latest .env.example .env.local
 ```
 
 ## Quick start
