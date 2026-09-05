@@ -2,7 +2,7 @@
 
 **Catch `.env` drift before your deployment does.**
 
-`envdrift` is a small, dependency-free Go CLI that treats `.env.example` as a contract and checks every environment file against it. It spots missing variables, unexpected variables, duplicate declarations, and鈥攚hen asked鈥攄ifferent values without printing secrets.
+`envdrift` is a small, dependency-free Go CLI that treats `.env.example` as a contract and checks every environment file against it. It spots missing variables, unexpected variables, duplicate declarations, and—when asked—different values without printing secrets.
 
 > Your staging deploy should not be the first test of your configuration.
 
@@ -36,7 +36,8 @@ STRIPE_WEBHOOK_SECRET=
 ```dotenv
 # .env.staging
 PORT=8080
-DATABASE_URL=postgres://鈥?DEBUG=true
+DATABASE_URL=postgres://…
+DEBUG=true
 ```
 
 ```sh
@@ -44,13 +45,13 @@ envdrift .env.example .env.staging
 ```
 
 ```text
-WARNING: extra DEBUG in .env.staging 鈥?not declared in .env.example
-ERROR: missing STRIPE_WEBHOOK_SECRET in .env.staging 鈥?required by .env.example
+WARNING: extra DEBUG in .env.staging — not declared in .env.example
+ERROR: missing STRIPE_WEBHOOK_SECRET in .env.staging — required by .env.example
 
 Summary: 1 error(s), 1 warning(s)
 ```
 
-No paths uses the familiar `.env.example` 鈫?`.env` default.
+No paths uses the familiar `.env.example` → `.env` default.
 
 ## What it checks
 
