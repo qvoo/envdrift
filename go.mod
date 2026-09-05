@@ -1,4 +1,4 @@
-module github.com/qvoo/Hello-World
+module github.com/qvoo/envdrift
 
 go 1.22
 
