@@ -1,0 +1,11 @@
+# Binaries and test output
+envdrift
+envdrift.exe
+coverage.out
+
+# Never commit local configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+
