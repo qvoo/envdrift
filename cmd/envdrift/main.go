@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/qvoo/Hello-World"
+	"github.com/qvoo/envdrift"
 )
 
 const usage = `envdrift — find configuration drift before it reaches production
